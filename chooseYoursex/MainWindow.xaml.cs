@@ -24,15 +24,5 @@ namespace chooseYoursex
         {
             InitializeComponent();
         }
-
-        private void textbox1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            textbox2.Text = textbox1.Text;
-        }
-
-        private void textbox2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            textbox1.Text = textbox2.Text;
-        }
     }
 }
