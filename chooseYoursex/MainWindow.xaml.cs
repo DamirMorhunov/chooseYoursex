@@ -34,5 +34,15 @@ namespace chooseYoursex
         {
             textbox1.Text = textbox2.Text;
         }
+
+        private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            slider2.Value = slider1.Value;
+        }
+
+        private void slider2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            slider1.Value = slider2.Value;
+        }
     }
 }

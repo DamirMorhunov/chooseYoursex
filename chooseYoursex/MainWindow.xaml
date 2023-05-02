@@ -16,8 +16,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Choose your sex"/>
         <TextBox x:Name="textbox1" Grid.Row="1" TextChanged="textbox1_TextChanged"/>
-        <Slider Grid.Row="2"/>
+        <Slider x:Name ="slider1" Grid.Row="2" ValueChanged="slider1_ValueChanged" />
         <TextBox  x:Name="textbox2" Grid.Row="3" TextChanged="textbox2_TextChanged"/>
-        <Slider Grid.Row="4"/>
+        <Slider x:Name="slider2" Grid.Row="4" ValueChanged="slider2_ValueChanged"/>
     </Grid>
 </Window>
