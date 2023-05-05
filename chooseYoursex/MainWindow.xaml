@@ -15,9 +15,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="Choose your sex"/>
-        <TextBox x:Name="textbox1" Grid.Row="1" Text="{Binding ElementName=textbox2, Path=Text, Mode=TwoWay}"/>
-        <Slider Grid.Row="2"/>
-        <TextBox  x:Name="textbox2" Grid.Row="3" Text="{Binding ElementName=textbox1, Path=Text, Mode=TwoWay}"/>
-        <Slider Grid.Row="4"/>
+        <TextBox x:Name="textbox1" Grid.Row="1" Text="{Binding ElementName=textbox2, Path=Text}"/>
+        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding ElementName=slider2, Path=Value, Mode=TwoWay}"/>
+        <TextBox  x:Name="textbox2" Grid.Row="3" Text="{Binding ElementName=textbox1, Path=Text}"/>
+        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding ElementName=slider1, Path=Value, Mode=TwoWay}"/>
     </Grid>
 </Window>
