@@ -4,12 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:chooseYoursex" 
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:i1="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic.Core"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="450">
-    <Window.DataContext>
-        <local:ViewModel/>
-    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -20,12 +17,12 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Choose your sex"/>
         <TextBox x:Name="textbox1" Grid.Row="1" Text="{Binding ElementName=textbox2, Path=Text}"/>
-        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding FirstSliderValue}">
-            
-        </Slider>
+        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding FirstSliderValue}"/>
+
+
         <TextBox  x:Name="textbox2" Grid.Row="3" Text="{Binding ElementName=textbox1, Path=Text}"/>
-        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding SecondSliderValue}">
-            
-        </Slider>
+        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding SecondSliderValue}"/>
+
+
     </Grid>
 </Window>
