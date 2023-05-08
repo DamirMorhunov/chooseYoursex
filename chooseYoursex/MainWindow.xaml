@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:chooseYoursex"
+        xmlns:local="clr-namespace:chooseYoursex" 
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="450">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -16,8 +20,20 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Choose your sex"/>
         <TextBox x:Name="textbox1" Grid.Row="1" Text="{Binding ElementName=textbox2, Path=Text}"/>
-        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding ElementName=slider2, Path=Value, Mode=TwoWay}"/>
+        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding FirstSliderValue}>
+            <i:Interaction.Triggers>
+                <d:EventTrigger EventName="ValueChanged">
+                    <i:InvokeCommandAction Command="{Binding FirstSliderValueChangedCommand}"/>
+                </d:EventTrigger>
+            </i:Interaction.Triggers>
+        </Slider>
         <TextBox  x:Name="textbox2" Grid.Row="3" Text="{Binding ElementName=textbox1, Path=Text}"/>
-        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding ElementName=slider1, Path=Value, Mode=TwoWay}"/>
+        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding SecondSliderValue}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="ValueChanged">
+                    <i:InvokeCommandAction Command="{Binding FirstSliderValueChangedCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Slider>
     </Grid>
 </Window>
