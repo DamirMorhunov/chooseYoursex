@@ -16,12 +16,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="Choose your sex"/>
-        <TextBox x:Name="textbox1" Grid.Row="1" Text="{Binding ElementName=textbox2, Path=Text}"/>
-        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding FirstSliderValue}"/>
-
-
-        <TextBox  x:Name="textbox2" Grid.Row="3" Text="{Binding ElementName=textbox1, Path=Text}"/>
-        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding SecondSliderValue}"/>
+        <TextBox x:Name="textbox1" Grid.Row="1" TextChanged="textbox1_TextChanged"/>
+        <Slider x:Name="slider1" Grid.Row="2" ValueChanged="slider1_ValueChanged"/>
+        <TextBox  x:Name="textbox2" Grid.Row="3" TextChanged="textbox2_TextChanged"/>
+        <Slider x:Name="slider2" Grid.Row="4" ValueChanged="slider2_ValueChanged"/>
 
 
     </Grid>
