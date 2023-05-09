@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Choose your sex"/>
         <TextBox x:Name="textbox1" Grid.Row="1" Text="{Binding ElementName=textbox2, Path=Text}"/>
-        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding FirstSliderValue}">
+        <Slider x:Name="slider1" Grid.Row="2" Value="{Binding FirstSliderValue}" Maximum="{Binding Slider1MaxValue}">
             <i:Interaction.Triggers>
                 <d:EventTrigger EventName="ValueChanged">
                     <i:InvokeCommandAction Command="{Binding FirstSliderValueChangedCommand}"/>
@@ -28,12 +28,12 @@
             </i:Interaction.Triggers>
         </Slider>
         <TextBox  x:Name="textbox2" Grid.Row="3" Text="{Binding ElementName=textbox1, Path=Text}"/>
-        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding SecondSliderValue}">
+        <Slider x:Name="slider2" Grid.Row="4" Value="{Binding SecondSliderValue}" Maximum="{Binding Slider1MaxValue}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="ValueChanged">
                     <i:InvokeCommandAction Command="{Binding FirstSliderValueChangedCommand}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
-        </Slider>
+
     </Grid>
 </Window>
